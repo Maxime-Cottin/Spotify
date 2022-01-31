@@ -1,0 +1,135 @@
+// Import fonts
+@font-face {
+  font-family: circular;
+  src: url("/assets/fonts/CircularStd-Book.otf") format("opentype");
+}
+@font-face {
+  font-family: circular-bold;
+  src: url("/assets/fonts/CircularStd-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: circular-black;
+  src: url("/assets/fonts/CircularStd-Black.otf") format("opentype");
+}
+
+// Colors
+$green: #1ed760;
+$blue: #2940ab;
+
+// Body settings
+body {
+  margin: 0;
+  padding: 0;
+  font-family: circular;
+  font-size: 16px;
+}
+
+// Header settings
+header {
+  background-color: black;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  img {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 2rem;
+  }
+  .burgerMenu {
+    z-index: 10;
+    background-color: white;
+    width: 1.5rem;
+    height: 0.2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0.1rem;
+    position: relative;
+    transition: all ease-in-out 0.4s;
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: white;
+      width: 1.5rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      top: 0.5em;
+      transition: all ease-in-out 0.4s;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      background-color: white;
+      width: 1.5rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      bottom: 0.5rem;
+      transition: all ease-in-out 0.4s;
+    }
+  }
+  .burgerMenu-active {
+    z-index: 10;
+    background-color: white;
+    width: 1.5rem;
+    height: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0.1rem;
+    position: relative;
+    transition: all ease-in-out 0.4s;
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: white;
+      width: 1.5rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      top: -0.1rem;
+      transform: rotate(45deg);
+      transition: all ease-in-out 0.4s;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      background-color: white;
+      width: 1.5rem;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      bottom: -0.1rem;
+      transform: rotate(-45deg);
+      transition: all ease-in-out 0.4s;
+    }
+  }
+  nav {
+    display: none;
+    ul {
+      list-style: none;
+      li {
+        padding-bottom: 1.5rem;
+        a {
+          text-decoration: none;
+          color: white;
+          font-family: circular-bold;
+          font-size: 2rem;
+        }
+        .userInteract {
+          font-family: circular;
+          font-size: 1.5rem;
+        }
+      }
+      .separator {
+        background-color: white;
+        width: 1.25rem;
+        height: 2px;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+}
+
+// Hero banner settings
+.herobanner {
+  height: 100vh;
+  background-color: $blue;
+}
